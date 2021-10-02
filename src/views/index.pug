@@ -1,0 +1,15 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+    - const title = "NFT Marketplace"
+
+block content
+    include ../../node_modules/bemto.pug/bemto.pug
+    +b.container
+        +b.row
+            +b.example(style="width: 100%")
+
+block scripts
+    script(src="js/main.js")
+    script(src="js/vendor.js")
