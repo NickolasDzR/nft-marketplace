@@ -1,0 +1,20 @@
+mixin title(value = false)
+    +b.title
+        .decorate
+            +e.decorate-img(src="img/content/decorate/specular.webp" width="107" height="107")
+            +e.decorate-img(src="img/content/decorate/specular.webp" width="61" height="61")
+            +e.decorate-img(src="img/content/decorate/specular.webp" width="80" height="80")
+        .container.h-full
+            .row.h-full
+                +e.content.col-12
+                    +e.content-wrp
+                        +e.H1.heading !{value.heading}
+                        +e.P.subheading !{value.subheading}
+                        +e.P.text !{value.text}
+        +picture({
+            folder: "top",
+            name: "nft-screen",
+            md: true,
+            width: 270,
+            height: 360,
+        })

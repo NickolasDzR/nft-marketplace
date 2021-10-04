@@ -1,0 +1,155 @@
+$hamburger-padding-x: 15px !default;
+$hamburger-padding-y: 15px !default;
+$hamburger-layer-width-small: 8px !default;
+$hamburger-layer-width-big: 20px !default;
+$hamburger-layer-height: 2.5px !default;
+$hamburger-layer-spacing: 2.5px !default;
+$hamburger-layer-color: $white !default;
+$hamburger-layer-color_theme: $white !default;
+$hamburger-layer-border-radius: 6px !default;
+$hamburger-hover-opacity: 0.7 !default;
+$hamburger-active-layer-color: $hamburger-layer-color !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+$hamburger-offset-top: 0;
+$disableHamburgerMedia: $break_md;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter: false !default;
+$hamburger-hover-filter: opacity(50%) !default;
+$hamburger-active-hover-filter: $hamburger-hover-filter !default;
+
+.hamburger {
+    position: absolute;
+    z-index: 101;
+    top: $hamburger-offset-top;
+    right: 0;
+    left: auto;
+    overflow: visible;
+    margin: 0;
+    border: 0;
+    padding: $hamburger-padding-y $hamburger-padding-x;
+    cursor: pointer;
+
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+
+    // Normalize (<button>)
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    @media (min-width: $disableHamburgerMedia) {
+        display: none;
+    }
+
+    &:hover {
+        @if $hamburger-hover-use-filter == true {
+            filter: $hamburger-hover-filter;
+        }
+        @else {
+            opacity: $hamburger-hover-opacity;
+        }
+    }
+
+    &.is-active {
+        z-index: 300;
+
+        &:hover {
+            @if $hamburger-hover-use-filter == true {
+                filter: $hamburger-active-hover-filter;
+            }
+            @else {
+                opacity: $hamburger-active-hover-opacity;
+            }
+        }
+
+        .hamburger-inner, .hamburger-inner::after {
+            background-color: $hamburger-layer-color;
+        }
+    }
+
+    &_theme_blue {
+        .hamburger-inner, .hamburger-inner::after {
+            background-color: $hamburger-layer-color_theme;
+        }
+    }
+}
+
+.hamburger-box {
+    display: inline-block;
+    position: relative;
+    width: $hamburger-layer-width-big;
+    height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+}
+
+.hamburger-inner {
+    display: block;
+    margin-top: -3px;
+
+    &::before, &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: $hamburger-layer-width-big;
+        height: $hamburger-layer-height;
+        background-color: $hamburger-layer-color;
+        border-radius: $hamburger-layer-border-radius;
+        transition: transform 0.15s ease, background-color 0.15s ease 600ms;
+    }
+
+    position: absolute;
+    top: 50%;
+    width: $hamburger-layer-width-small;
+    height: $hamburger-layer-height;
+    background-color: $hamburger-layer-color;
+    transition: transform 0.15s ease, background-color 0.15s ease 600ms;
+    border-radius: $hamburger-layer-border-radius;
+
+    &::before {
+        top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+
+    &::after {
+        bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+}
+
+.hamburger--slider {
+    .hamburger-inner {
+        top: 7px;
+
+
+        &::after {
+            top: 5px;
+        }
+    }
+
+    &.is-active {
+        .hamburger-inner {
+            $y-offset: $hamburger-layer-spacing + $hamburger-layer-height;
+            background-color: $light-black;
+
+            &::before {
+                opacity: 0;
+                background-color: $light-black;
+            }
+
+            top: 2px;
+            width: $hamburger-layer-width-big;
+
+            transform: translate3d(0, $y-offset, 0) rotate(45deg);
+            transition: transform 0.15s ease, background-color 0.15s ease 0ms;
+
+            &::after {
+                top: 10.4px;
+                width: 20px;
+                transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);
+                background-color: $light-black;
+                transition: transform 0.15s ease, background-color 0.15s ease 0ms;
+            }
+        }
+    }
+}

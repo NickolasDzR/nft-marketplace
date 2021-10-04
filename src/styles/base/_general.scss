@@ -1,6 +1,37 @@
-h1, h2, h3, h4, h5, h6, ul {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing--moz-osx-font-smoothing: grayscale;
+  font-family: $default-font;
+  font-size: 16px;
+  color: $light-gray;
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, ul, p, ul, li, span, img {
     margin: 0;
     padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -10,4 +41,125 @@ h1, h2, h3, h4, h5, h6, ul {
     @include lg(max-width, 960px);
     @include xl(max-width, 1140px);
     @include xxl(max-width, 1450px);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-1 {
+    @include col();
+    @include size(1);
+}
+
+.col-2 {
+    @include col();
+    @include size(2);
+}
+
+.col-3 {
+    @include col();
+    @include size(3);
+}
+
+.col-4 {
+    @include col();
+    @include size(4);
+}
+
+.col-5 {
+    @include col();
+    @include size(5);
+}
+
+.col-6 {
+    @include col();
+    @include size(6);
+}
+
+.col-7 {
+    @include col();
+    @include size(7);
+}
+
+.col-8 {
+    @include col();
+    @include size(8);
+}
+
+.col-9 {
+    @include col();
+    @include size(9);
+}
+
+.col-10 {
+    @include col();
+    @include size(10);
+}
+
+.col-11 {
+    @include col();
+    @include size(11);
+}
+
+.col-12 {
+    @include col();
+    @include size(12);
+}
+
+h1 {
+  font-family: $poppins;
+  font-size: 26px;
+  line-height: 39px;
+  @media (min-width: $break_md) {
+      font-size: 52px;
+      line-height: 64px;
+  }
+
+  @media (min-width: $break_xl) {
+    font-size: 80px;
+    line-height: 120px;
+  }
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+h2 {
+  font-family: $syncopate;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36px;
+  @media (min-width: $break_md) {
+
+  }
+
+  @media (min-width: $break_xl) {
+    font-size: 40px;
+    line-height: 42px;
+  }
+}
+
+.header {
+    background: $light-black;
+    position: relative;
+    &:after {
+        content: "";
+        width: 100%;
+        height: 40px;
+        background: $light-black;
+        display: block;
+        top: 0;
+        right: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
 }

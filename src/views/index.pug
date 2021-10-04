@@ -1,15 +1,36 @@
 extends layouts/default
 include helpers/mixins
+include ../blocks/components/hamburger/hamburger
+include ../blocks/modules/nav/nav
+include ../blocks/modules/title/title
 
 block variables
     - const title = "NFT Marketplace"
+    -
+        navigationItems = [["About", "About"], ["How it works", "How it works"], ["Advantages", "Advantages"], ["Road Map", "Road Map"], ["Team", "Team"]]
+        titleBlock = {
+            heading: "NFTime.",
+            subheading: "A space to discover NFTs,<br> follow and chat with friends",
+            text: "Build on Binance Smart Chain",
+        }
 
 block content
     include ../../node_modules/bemto.pug/bemto.pug
-    +b.container
-        +b.row
-            +b.example(style="width: 100%")
-
+    +b.HEADER.header
+        .container.w-100
+            .row
+                //+icon({
+                //    name: "logo",
+                //    class: "header__logo",
+                //})
+                +hamburger({
+                    parentClass: "header_hamburger"
+                })
+                +nav({
+                    navigationListItems: navigationItems,
+                })
+    +b.main
+        +title(titleBlock)
 block scripts
     script(src="js/main.js")
     script(src="js/vendor.js")

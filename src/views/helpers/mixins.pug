@@ -1,0 +1,44 @@
+mixin icon(value = false)
+    -
+        const
+                modifier = value.modifier ? value.class + '_' + value.name : ''
+        image = value.alt ? value.alt : false
+        height = value.height ? value.height : ""
+        width = value.width ? value.width : ""
+        id = value.id ? value.id : ""
+    if value.path
+        img(class= value.class, class=modifier, src=`img/svg/${value.name}.svg` width=width height=height id=id)
+    else
+        svg(class= value.class, class=modifier, viewbox=value.viewbox role=image ? "img" : image, aria-label=image)
+            use(xlink:href=`img/sprites/sprite.svg#${value.name}`)
+
+mixin picture(value = false)
+    +b.PICTURE
+        if value.lg
+            source(srcset=`img/content/${value.folder}/${value.name}-tab.webp 1x,
+                                    img/content/${value.folder}/${value.name}-tab@x2.webp 2x`
+                media="(min-width: 768px)"
+                type="image/webp"
+            )
+        if value.md
+            source(srcset=`img/content/${value.folder}/${value.name}-tab.webp 1x,
+                            img/content/${value.folder}/${value.name}-tab@x2.webp 2x`
+                media="(min-width: 768px)"
+                type="image/webp"
+            )
+        if value.sm
+            source(srcset=`img/content/${value.folder}/${value.name}-tab.webp 1x,
+                        img/content/${value.folder}/${value.name}-tab@x2.webp 2x`
+                media="(min-width: 568px)"
+                type="image/webp"
+            )
+        +e.IMG.image(class=value.class ? value.class : false
+            srcset=`img/content/${value.folder}/${value.name}-mob@x2.webp 2x`
+            src=`img/content/${value.folder}/${value.name}-mob.webp`
+            class=value.elem ? value.elem : false
+            alt=value.alt
+            data=value.data
+            width=value.width
+            height=value.height
+            loading=value.lazyload ? "lazy" : false,
+        )

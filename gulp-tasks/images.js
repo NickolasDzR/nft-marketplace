@@ -18,7 +18,7 @@ const argv = yargs.argv,
 
 gulp.task("images", () => {
     return gulp.src(paths.images.src)
-        .pipe(newer(paths.images.dist))  
+        .pipe(newer(paths.images.dist))
         .pipe(gulpif(production, imagemin([
             imageminGiflossy({
                 optimizationLevel: 3,
@@ -34,7 +34,7 @@ gulp.task("images", () => {
             }),
             imageminMozjpeg({
                 progressive: true,
-                quality: 90
+                quality: 95
             }),
             imagemin.svgo({
                 plugins: [
