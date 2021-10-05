@@ -1,0 +1,21 @@
+mixin howto(value = false)
+    +b.howto(id="HowTo")
+        .container
+            .row
+                +e.static.col-md-6
+                    each val in value.list
+                        +e.content-wrp.col-12
+                            +e.text-wrp
+                                +e.P.heading How it works
+                                +e.P.subheading #{val.subheading}
+                                +e.P.text #{val.text}
+                            +picture({
+                                name: val.img,
+                                folder: "howto",
+                                sm: true,
+                                width: 520,
+                                height: 338,
+                            })
+                +e.fixed
+                    each val in value.list
+                        +e.IMG.fixed-img(src="img/content/howto/" + val.img + "-tab.webp" srcset="img/content/howto/" + val.img + "-tab@x2.webp 2x")

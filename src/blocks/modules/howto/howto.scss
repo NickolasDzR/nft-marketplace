@@ -1,0 +1,81 @@
+.howto {
+    &__image {
+        width: 100%;
+        @media (min-width: $break_md) {
+            display: none;
+        }
+    }
+
+    &__content-wrp {
+        margin: 0 auto;
+
+        & + & {
+            margin-top: 50px;
+            @media (min-width: $break_md) {
+                margin-top: 150px;
+            }
+        }
+        @media (min-width: $break_lg) {
+            &:first-child {
+                padding-top: 40px;
+            }
+            &:last-child {
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+    &__heading {
+        font-family: $syncopate;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 21px;
+        margin-bottom: 15px;
+        @media (min-width: $break_md) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: $break_lg) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+    }
+
+    &__subheading {
+        font-family: $raleway;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 10px;
+        @media (min-width: $break_lg) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+
+    &__text {
+        font-family: $raleway;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 50px;
+        @media (min-width: $break_md) {
+            margin-bottom: 0;
+        }
+        @media (min-width: $break_lg) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+
+    &__fixed {
+        flex: 1;
+    }
+
+    &__fixed-img {
+        position: absolute;
+        right: 0;
+    }
+}

@@ -1,0 +1,16 @@
+mixin categories(value = false)
+    +b.categories
+        +e.H2.heading !{value.heading}
+        .container
+            .row
+                each val in value.list
+                    +e.img-wrp.col-12.col-md-6.col-lg-4
+                        +picture({
+                            name: val,
+                            folder: "categories",
+                            sm: true,
+                            width: 288,
+                            height: 158,
+                        })
+                        +e.text-wrp
+                            +e.P.text !{val}

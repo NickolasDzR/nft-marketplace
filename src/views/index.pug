@@ -4,17 +4,45 @@ include ../blocks/components/hamburger/hamburger
 include ../blocks/modules/nav/nav
 include ../blocks/modules/title/title
 include ../blocks/modules/about/about
+include ../blocks/modules/categories/categories
+include ../blocks/modules/howto/howto
+include ../blocks/modules/features/features
 
 block variables
     - const title = "NFT Marketplace"
     -
-        navigationItems = [["About", "About"],  ["How it works", "How it works"], ["Advantages", "Advantages"], ["Road Map", "Road Map"], ["Team", "Team"]]
+        navigationItems = [["About", "About"],  ["HowTo", "HowTo"], ["Advantages", "Advantages"], ["Road Map", "Road Map"], ["Team", "Team"]]
         titleBlock = {
             heading: "NFTime.",
             subheading: "A space to discover NFTs,<br> follow and chat with friends",
             text: "Build on Ethereum",
         }
         aboutList = ["Creating and selling NFTs", "Earning", "Making friends", "Chatting", "Sharing your gallery", "Creating NFTs with your friends"]
+        categoriesList = [
+            "art", "music", "sport", "games", "nature", "charity"
+        ]
+        howto = [
+            {
+                subheading: "Create and sell your NFTs",
+                text: "Staking is an activity where a user locks or holds his funds in a cryptocurrency wallet to participate in maintaining the operations of a proof-of-stake (PoS)-based blockchain system. It is similar to crypto mining because it helps a network to achieve consensus while rewarding users who participate.",
+                img: "sell-nft",
+            },
+            {
+                subheading: "Set up your wallet",
+                text: "Staking is an activity where a user locks or holds his funds in a cryptocurrency wallet to participate in maintaining the operations of a proof-of-stake (PoS)-based blockchain system. It is similar to crypto mining because it helps a network to achieve consensus while rewarding users who participate.",
+                img: "wallet",
+            },
+            {
+                subheading: "Add your NFTs",
+                text: "Staking is an activity where a user locks or holds his funds in a cryptocurrency wallet to participate in maintaining the operations of a proof-of-stake (PoS)-based blockchain system. It is similar to crypto mining because it helps a network to achieve consensus while rewarding users who participate.",
+                img: "operation"
+            },
+            {
+                subheading: "List them for sale",
+                text: "Staking is an activity where a user locks or holds his funds in a cryptocurrency wallet to participate in maintaining the operations of a proof-of-stake (PoS)-based blockchain system. It is similar to crypto mining because it helps a network to achieve consensus while rewarding users who participate.",
+                img: "profile"
+            },
+        ]
 
 block content
     include ../../node_modules/bemto.pug/bemto.pug
@@ -36,6 +64,14 @@ block content
         +about({
             list: aboutList,
         })
+        +categories({
+            list: categoriesList,
+            heading: "The<br> categories",
+        })
+        +howto({
+            list: howto,
+        })
+        +features
 block scripts
     script(src="js/main.js")
     script(src="js/vendor.js")

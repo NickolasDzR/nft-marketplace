@@ -81,35 +81,35 @@ window.onload = () => {
     });
 };
 
-const productAnchor = document.querySelector("a[href='#Product']");
-const serviceAnchor = document.querySelector("a[href='#services']");
+const productAnchor = document.querySelector("a[href='#About']");
+const howTo = document.querySelector("a[href='#howTo']");
 const roadMapAnchor = document.querySelector("a[href='#Roadmap']");
 const headerLogo = document.querySelector(".header__logo");
 
 productAnchor.addEventListener("click", () => {
-    jump("#Product", {
+    jump("#About", {
         offset: -100,
-        duration: 300,
+        duration: 500,
     });
 });
 
-serviceAnchor.addEventListener("click", () => {
-    jump("#services", {
+howTo.addEventListener("click", () => {
+    jump("#howTo", {
         offset: -100,
-        duration: 300,
+        duration: 500,
     });
 });
-
-roadMapAnchor.addEventListener("click", () => {
-    jump("#Roadmap", {
-        offset: -100,
-        duration: 300,
-    });
-});
-
-headerLogo.addEventListener("click", () => {
-    jump("body", {
-        offset: 0,
-        duration: 0
-    });
-});
+//
+// roadMapAnchor.addEventListener("click", () => {
+//     jump("#Roadmap", {
+//         offset: -100,
+//         duration: 500,
+//     });
+// });
+//
+// headerLogo.addEventListener("click", () => {
+//     jump("body", {
+//         offset: 0,
+//         duration: 0
+//     });
+// });

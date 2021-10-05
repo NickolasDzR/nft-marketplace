@@ -1,4 +1,5 @@
 .about {
+    margin-bottom: 80px;
     @media (min-width: $break_md) {
         background-image: url(../img/content/about/mirror-tab.webp);
         background-repeat: no-repeat;
@@ -8,6 +9,11 @@
 
     @media (min-width: $break_xl) {
         background-size: 50% 100%;
+        margin-bottom: 150px;
+    }
+
+    @media (min-width: $break_xxl) {
+        margin-bottom: 200px;
     }
 
     &__left {
@@ -47,8 +53,8 @@
         font-size: 18px;
         line-height: 24px;
         @media (min-width: $break_md) {
-            font-size: 22px;
-            line-height: 32px;
+            font-size: 20px;
+            line-height: 28px;
         }
 
         @media (min-width: $break_xl) {
@@ -90,8 +96,8 @@
             line-height: 30px;
         }
         @media (min-width: $break_md) {
-            font-size: 22px;
-            line-height: 32px;
+            font-size: 20px;
+            line-height: 24px;
         }
 
         @media (min-width: $break_xl) {

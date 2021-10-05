@@ -31,6 +31,7 @@ a {
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
@@ -121,6 +122,11 @@ img {
 .col-md-6 {
     @include col();
     @include size-md(6);
+}
+
+.col-lg-4 {
+    @include col();
+    @include size-lg(4);
 }
 
 h1 {

@@ -12,6 +12,14 @@
         height: calc(100vh - 78px);
     }
 
+    @media (min-width: $break_xl) {
+        margin-bottom: 150px;
+    }
+
+    @media (min-width: $break_xxl) {
+        margin-bottom: 200px;
+    }
+
     &__decorate-img {
         position: absolute;
         width: 107px;
