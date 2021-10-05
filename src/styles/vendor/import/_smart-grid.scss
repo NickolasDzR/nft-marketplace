@@ -6,7 +6,8 @@ $break_sm: 576px;
 $break_md: 768px;
 $break_lg: 992px;
 $break_xl: 1200px;
-$break_xxl: 1480px;
+$break_xxl: 1400px;
+$break_x: 1660px;
 
 $offset: 30px;
 $offset_xs: $offset;
@@ -15,6 +16,7 @@ $offset_md: $offset;
 $offset_lg: $offset;
 $offset_xl: $offset;
 $offset_xxl: $offset;
+$offset_x: $offset;
 
 $offset_one_side: ($offset / 2);
 $offset_xs_one_side: ($offset_xs / 2);
@@ -23,6 +25,7 @@ $offset_md_one_side: ($offset_md / 2);
 $offset_lg_one_side: ($offset_lg / 2);
 $offset_xl_one_side: ($offset_xl / 2);
 $offset_xxl_one_side: ($offset_xxl / 2);
+$offset_x_one_side: ($offset_x / 2);
 
 $fields: 15px;
 
@@ -115,6 +118,11 @@ $fields: 15px;
 @mixin size-xxl($n){
     $val: 100% / $columns * $n;
     @include xxl(width, #{calc(#{$val} - #{$offset_xxl})});
+}
+
+@mixin size-x($n){
+    $val: 100% / $columns * $n;
+    @include x(width, #{calc(#{$val} - #{$offset_x})});
 }
 
 @mixin shift($n){
@@ -341,6 +349,38 @@ $fields: 15px;
     @include xxl(padding-right, #{calc(#{$val} + #{$offset_xxl_one_side})});
 }
 
+@mixin shift-x($n){
+    $val: 100% / $columns * $n;
+    @include x(margin-left, #{calc(#{$val} + #{$offset_x_one_side})});
+    @include x(margin-right, #{calc(#{$val} + #{$offset_x_one_side})});
+}
+
+@mixin shift-x-left($n){
+    $val: 100% / $columns * $n;
+    @include x(margin-left, #{calc(#{$val} + #{$offset_x_one_side})});
+}
+
+@mixin shift-x-right($n){
+    $val: 100% / $columns * $n;
+    @include x(margin-right, #{calc(#{$val} + #{$offset_x_one_side})});
+}
+
+@mixin shift-x-padding($n){
+    $val: 100% / $columns * $n;
+    @include x(padding-left, #{calc(#{$val} + #{$offset_x_one_side})});
+    @include x(padding-right, #{calc(#{$val} + #{$offset_x_one_side})});
+}
+
+@mixin shift-x-padding-left($n){
+    $val: 100% / $columns * $n;
+    @include x(padding-left, #{calc(#{$val} + #{$offset_x_one_side})});
+}
+
+@mixin shift-x-padding-right($n){
+    $val: 100% / $columns * $n;
+    @include x(padding-right, #{calc(#{$val} + #{$offset_x_one_side})});
+}
+
 @mixin xs($name, $value){
     @media screen and (min-width: $break_xs){
         #{$name}: $value;
@@ -409,6 +449,18 @@ $fields: 15px;
 
 @mixin xxl-block(){
     @media screen and (min-width: $break_xxl){
+        @content;
+    }
+}
+
+@mixin x($name, $value){
+    @media screen and (min-width: $break_x){
+        #{$name}: $value;
+    }
+}
+
+@mixin x-block(){
+    @media screen and (min-width: $break_x){
         @content;
     }
 }

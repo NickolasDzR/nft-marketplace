@@ -1,0 +1,12 @@
+mixin about(value = false)
+    +b.about
+        .container-sm
+            .row
+                +e.left.w-full.col-md-6
+                    +e.H2.heading the product
+                    +e.P.text The decentralized platform for
+                +e.right.w-full.col-md-6
+                    +e.UL.list
+                        each item in value.list
+                            +e.LI.item !{item}
+

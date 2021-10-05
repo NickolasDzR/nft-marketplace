@@ -1,31 +1,16 @@
 .title {
     position: relative;
     height: 100vh;
-    overflow: visible;
+    overflow: hidden;
     background-color: $darker-blue;
-    //background-image: url(../img/content/top/nft-screen-mob.webp);
-    //background-size: 270px;
-    //background-repeat: no-repeat;
-    //background-position: center bottom;
-    //@media (min-width: $break_md) {
-    //    height: calc(100vh - 55px);
-    //    background-image: url(../img/content/top/nft-screen-tab.webp);
-    //    background-size: 740px;
-    //    background-position: right bottom;
-    //}
-    //
-    //@media (min-width: $break_lg) {
-    //    height: calc(100vh - 78px);
-    //}
-    //
-    //@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    //    background-image: url(../img/content/top/nft-screen-mob@x2.webp);
-    //}
-    //
-    //@media (min-width: $break_md) and (-webkit-min-device-pixel-ratio: 2),
-    //    (min-width: $break_md) and (min-resolution: 192dpi) {
-    //    background-image: url(../img/content/top/nft-screen-tab@x2.webp) !important;
-    //}
+    margin-bottom: 80px;
+    @media (min-width: $break_md) {
+        height: calc(100vh - 55px);
+    }
+
+    @media (min-width: $break_lg) {
+        height: calc(100vh - 78px);
+    }
 
     &__decorate-img {
         position: absolute;
@@ -33,18 +18,46 @@
         height: 107px;
 
         &:nth-child(1) {
+            z-index: 1;
             top: 60px;
             right: -50px;
+            @media (min-width: $break_xl) {
+                top: auto;
+                right: 686px;
+                bottom: 601px;
+            }
+            @media (min-width: $break_xxl) {
+                right: 786px;
+            }
+            @media (min-width: $break_x) {
+                right: 1050px;
+                bottom: 680px;
+            }
         }
 
         &:nth-child(2) {
-            right: -43px;
+            z-index: 1;
+            right: -20px;
             bottom: 23px;
+            width: 61px;
+            height: 61px;
+            @media (min-width: $break_xl) {
+                display: none;
+            }
         }
 
         &:nth-child(3) {
+            z-index: 1;
             bottom: 112px;
-            left: -61px;
+            left: -33px;
+            width: 80px;
+            height: 80px;
+            @media (min-width: $break_xl) {
+                bottom: 40px;
+                left: -60px;
+                width: 200px;
+                height: 200px;
+            }
         }
     }
 
@@ -55,18 +68,74 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
+
+        &::after {
+            @media (min-width: $break_xl) {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 162px;
+                height: 162px;
+                background-image: url(../img/content/decorate/specular.webp);
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        @media (orientation: landscape) and (min-width: 568px) {
+            bottom: -200px;
+        }
+
+        @media (orientation: landscape) and (min-width: 667px) {
+            bottom: -140px;
+        }
+
+        @media (orientation: landscape) and (min-width: 768px) {
+            right: 0;
+            bottom: -200px;
+            left: auto;
+        }
+
+        @media (orientation: landscape) and (min-width: 992px) {
+            bottom: -250px;
+            right: -60px;
+            left: auto;
+        }
+
         @media (min-width: $break_md) {
-            bottom: 56px;
-            left: 52%;
+            right: -40px;
+            left: auto;
             width: 740px;
             height: auto;
+            transform: none;
         }
 
         @media (min-width: $break_lg) {
-            bottom: 0px;
-            left: 53%;
+            right: -40px;
+            bottom: 0;
+            left: auto;
             width: 960px;
             height: auto;
+        }
+
+        @media (min-width: $break_xl) {
+            right: -200px;
+            bottom: 0;
+            left: auto;
+            transform: none;
+        }
+
+        @media (min-width: $break_xxl) {
+            right: -100px;
+        }
+
+        @media (min-width: $break_x) {
+            right: 0;
+            width: 1130px;
+            height: 780px;
         }
     }
 
@@ -87,12 +156,32 @@
         position: relative;
         text-align: center;
         height: 100%;
+
+        @media (min-width: $break_xl) {
+            align-items: center;
+            justify-content: flex-start;
+        }
     }
 
     &__content-wrp {
         margin-top: auto;
         position: absolute;
         bottom: 330px;
+        @media (orientation: landscape) and (min-width: 568px) {
+            bottom: 130px;
+        }
+        @media (orientation: landscape) and (min-width: 667px) {
+            bottom: 180px;
+        }
+
+        @media (orientation: landscape) and (min-width: 768px) {
+            bottom: 350px;
+        }
+
+        @media (orientation: landscape) and (min-width: 992px) {
+            bottom: 470px;
+        }
+
         @media (min-width: $break_xs) {
             bottom: 380px;
         }
@@ -101,12 +190,29 @@
         }
 
         @media (min-width: $break_md) {
-            bottom: 760px;
+            bottom: 600px;
+        }
+
+        @media (min-width: $break_lg) {
+            bottom: 770px;
+        }
+
+        @media (min-width: $break_xl) {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            right: auto;
+            top: auto;
+            margin-top: 0;
         }
     }
 
     &__heading {
         margin-bottom: 2px;
+        @media (min-width: $break_xl) {
+            text-align: left;
+            margin-bottom: 0;
+        }
     }
 
     &__subheading {
@@ -119,6 +225,18 @@
             font-size: 24px;
             line-height: 28px;
         }
+        @media (min-width: $break_lg) {
+            font-size: 28px;
+            line-height: 34px;
+        }
+        @media (min-width: $break_xl) {
+            text-align: left;
+        }
+
+        @media (min-width: $break_xxl) {
+            font-size: 32px;
+            line-height: 48px;
+        }
     }
 
     &__text {
@@ -128,6 +246,17 @@
         @media (min-width: $break_md) {
             font-size: 16px;
             line-height: 22px;
+        }
+        @media (min-width: $break_lg) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+        @media (min-width: $break_xl) {
+            text-align: left;
+        }
+        @media (min-width: $break_xxl) {
+            font-size: 22px;
+            line-height: 24px;
         }
     }
 }

@@ -3,16 +3,18 @@ include helpers/mixins
 include ../blocks/components/hamburger/hamburger
 include ../blocks/modules/nav/nav
 include ../blocks/modules/title/title
+include ../blocks/modules/about/about
 
 block variables
     - const title = "NFT Marketplace"
     -
-        navigationItems = [["About", "About"], ["How it works", "How it works"], ["Advantages", "Advantages"], ["Road Map", "Road Map"], ["Team", "Team"]]
+        navigationItems = [["About", "About"],  ["How it works", "How it works"], ["Advantages", "Advantages"], ["Road Map", "Road Map"], ["Team", "Team"]]
         titleBlock = {
             heading: "NFTime.",
             subheading: "A space to discover NFTs,<br> follow and chat with friends",
-            text: "Build on Binance Smart Chain",
+            text: "Build on Ethereum",
         }
+        aboutList = ["Creating and selling NFTs", "Earning", "Making friends", "Chatting", "Sharing your gallery", "Creating NFTs with your friends"]
 
 block content
     include ../../node_modules/bemto.pug/bemto.pug
@@ -31,6 +33,9 @@ block content
                 })
     +b.main
         +title(titleBlock)
+        +about({
+            list: aboutList,
+        })
 block scripts
     script(src="js/main.js")
     script(src="js/vendor.js")

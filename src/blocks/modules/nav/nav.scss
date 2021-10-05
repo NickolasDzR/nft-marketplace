@@ -197,6 +197,7 @@ $staticNavigationMediaBreak: $break_md;
         height: 100vh;
         visibility: visible;
         pointer-events: auto;
+        overflow-y: scroll;
 
         .nav__item {
             transform: translate3d(0, 0, 0);
