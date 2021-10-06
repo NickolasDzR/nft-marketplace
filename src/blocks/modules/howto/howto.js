@@ -30,14 +30,18 @@ const getCoordinateOfElement = () => {
 
     const lgImageHeightFirst = 300;
 
+    const XlImageHeightFirst = 347;
+
     const xxlImageHeightFirst = 454;
 
     const getCorrectImageHeight = () => {
         if (viewportWidth >= 768 && viewportWidth < 992) {
             return mdImageHeightFirst;
-        } else if (viewportWidth >= 992 && viewportWidth <= 1280) {
+        } else if (viewportWidth >= 992 && viewportWidth <= 1200) {
             return lgImageHeightFirst;
-        } else if (viewportWidth > 1280) {
+        } else if (viewportWidth > 1200 && viewportWidth <= 1440) {
+            return XlImageHeightFirst;
+        } else if (viewportWidth > 1440) {
             return xxlImageHeightFirst;
         } else {
             if (viewportWidth >= 768) {
@@ -45,7 +49,7 @@ const getCoordinateOfElement = () => {
             }
         }
     };
-
+    console.log("fired");
     return (viewportHeight / 2) - (getCorrectImageHeight() / 2);
 };
 
@@ -54,10 +58,9 @@ const contentMarkserBlock = gsap.utils.toArray(".howto__content-wrp");
 
 const scrollTriggerSettings = {
     trigger: ".howto",
-    start: `top top+=${getCoordinateOfElement()}`,
-    end: `bottom bottom-=${getCoordinateOfElement()}`,
+    start: () => `top top+=${getCoordinateOfElement()}`,
+    end: () => `bottom bottom-=${getCoordinateOfElement()}`,
     onUpdate: getCurrentSection,
-    invalidateOnRefresh: true,
     pin: ".howto__fixed",
 };
 
@@ -140,9 +143,10 @@ function getCurrentSection() {
     }
 }
 
-const media = window.matchMedia("screen and (max-width: 576px)");
+const media = window.matchMedia("screen and (max-width: 768px)");
 ScrollTrigger.addEventListener("refreshInit", checkSTState);
 checkSTState();
+
 
 function checkSTState() {
     if (animationFixes) {
@@ -186,17 +190,33 @@ ScrollTrigger.addEventListener("refreshInit", function () {
 });
 
 ScrollTrigger.matchMedia({
-    "(min-width: 576px)": function () {
+    "(min-width: 768px)": function () {
         animationFixes = ScrollTrigger.create(scrollTriggerSettings);
         animationFixes.update();
         animationFixes.refresh();
     },
-    "(max-width: 576px)": function () {
+    "(max-width: 768px)": function () {
         if (animationFixes) {
             animationFixes.kill(true);
             gsap.set(".howto__fixed", {clearProps: "all"});
         }
-    }
+    },
+    "(min-width: 992px)": function () {
+        animationFixes.update();
+        animationFixes.refresh();
+    },
+    "(min-width: 1200px)": function () {
+        animationFixes.update();
+        animationFixes.refresh();
+    },
+    "(min-width: 1400px)": function () {
+        animationFixes.update();
+        animationFixes.refresh();
+    },
+    "(min-width: 1660px)": function () {
+        animationFixes.update();
+        animationFixes.refresh();
+    },
 });
 
 onResizeHandler();

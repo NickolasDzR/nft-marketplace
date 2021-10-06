@@ -82,7 +82,7 @@ window.onload = () => {
 };
 
 const productAnchor = document.querySelector("a[href='#About']");
-const howTo = document.querySelector("a[href='#howTo']");
+const howTo = document.querySelector("a[href='#HowTo']");
 const roadMapAnchor = document.querySelector("a[href='#Roadmap']");
 const headerLogo = document.querySelector(".header__logo");
 
@@ -94,7 +94,7 @@ productAnchor.addEventListener("click", () => {
 });
 
 howTo.addEventListener("click", () => {
-    jump("#howTo", {
+    jump("#HowTo", {
         offset: -100,
         duration: 500,
     });
