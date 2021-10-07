@@ -39,9 +39,9 @@ const getCoordinateOfElement = () => {
             return mdImageHeightFirst;
         } else if (viewportWidth >= 992 && viewportWidth <= 1200) {
             return lgImageHeightFirst;
-        } else if (viewportWidth > 1200 && viewportWidth <= 1440) {
+        } else if (viewportWidth > 1200 && viewportWidth <= 1400) {
             return XlImageHeightFirst;
-        } else if (viewportWidth > 1440) {
+        } else if (viewportWidth > 1400) {
             return xxlImageHeightFirst;
         } else {
             if (viewportWidth >= 768) {
