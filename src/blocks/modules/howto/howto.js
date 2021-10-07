@@ -49,7 +49,6 @@ const getCoordinateOfElement = () => {
             }
         }
     };
-    console.log("fired");
     return (viewportHeight / 2) - (getCorrectImageHeight() / 2);
 };
 
@@ -58,8 +57,8 @@ const contentMarkserBlock = gsap.utils.toArray(".howto__content-wrp");
 
 const scrollTriggerSettings = {
     trigger: ".howto",
-    start: () => `top top+=${getCoordinateOfElement()}`,
-    end: () => `bottom bottom-=${getCoordinateOfElement()}`,
+    start:() => `top top+=${getCoordinateOfElement()}`,
+    end:() => `bottom bottom-=${getCoordinateOfElement()}`,
     onUpdate: getCurrentSection,
     pin: ".howto__fixed",
 };
@@ -195,7 +194,7 @@ ScrollTrigger.matchMedia({
         animationFixes.update();
         animationFixes.refresh();
     },
-    "(max-width: 768px)": function () {
+    "(max-width: 767px)": function () {
         if (animationFixes) {
             animationFixes.kill(true);
             gsap.set(".howto__fixed", {clearProps: "all"});

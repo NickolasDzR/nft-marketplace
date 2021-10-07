@@ -29,11 +29,17 @@ mixin picture(value = false)
         if value.sm
             source(srcset=`img/content/${value.folder}/${value.name}-tab.webp 1x,
                         img/content/${value.folder}/${value.name}-tab@x2.webp 2x`
-                media="(min-width: 568px)"
+                media="(min-width: 576px)"
+                type="image/webp"
+            )
+        if value.xs
+            source(srcset=`img/content/${value.folder}/${value.name}-tab.webp 1x
+                                ${!value.x2 ? ", img/content/${value.folder}/" + value.name + "-tab@x2.webp 2x" : ""}`
+                media="(min-width: 480px)"
                 type="image/webp"
             )
         +e.IMG.image(class=value.class ? value.class : false
-            srcset=`img/content/${value.folder}/${value.name}-mob@x2.webp 2x`
+            srcset=!value.x2 ? `img/content/${value.folder}/${value.name}-mob@x2.webp 2x` : false
             src=`img/content/${value.folder}/${value.name}-mob.webp`
             class=value.elem ? value.elem : false
             alt=value.alt

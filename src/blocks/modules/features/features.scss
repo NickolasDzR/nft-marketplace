@@ -1,3 +1,396 @@
 .features {
-    margin-top: 800px;
+    margin-bottom: 160px;
+
+    &__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 70px;
+        height: 70px;
+        background-image: url(../img/content/decorate/specular.webp);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+
+        @media (min-width: $break_xs) {
+            width: 130px;
+            height: 130px;
+        }
+
+        @media (min-width: $break_md) {
+            width: 170px;
+            height: 170px;
+        }
+
+        picture {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:after {
+            content: "NFTime";
+            font-family: $syncopate;
+            font-weight: 700;
+            font-size: 7px;
+            @media (min-width: $break_xs) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__center-wrp {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__image {
+        &_left-top, &_left-center-top, &_left-center-bottom, &_left-bottom, &_right-top, &_right-center-top, &_right-center-bottom, &_right-bottom {
+            position: absolute;
+        }
+
+        &_left-top {
+            top: -15px;
+            left: -22px;
+            width: 45px;
+            height: 18px;
+            @media (min-width: $break_xs) {
+                top: -6px;
+                left: -14px;
+                width: 45px;
+                height: 18px;
+            }
+            @media (min-width: $break_sm) {
+                top: -23px;
+                left: -67px;
+                width: 103px;
+                height: 37px;
+            }
+            @media (min-width: $break_md) {
+                left: -55px;
+            }
+        }
+
+        &_left-center-top {
+            top: 15px;
+            left: -32px;
+            width: 36px;
+            height: 6px;
+            @media (min-width: $break_xs) {
+                top: 38px;
+                left: -30px;
+                width: 36px;
+                height: 6px;
+            }
+            @media (min-width: $break_sm) {
+                top: 33px;
+                left: -74px;
+                width: 85px;
+                height: 10px;
+            }
+            @media (min-width: $break_md) {
+                top: 45px;
+                left: -74px;
+            }
+        }
+
+        &_left-center-bottom {
+            bottom: 15px;
+            left: -32px;
+            width: 36px;
+            height: 6px;
+            @media (min-width: $break_xs) {
+                bottom: 38px;
+                left: -30px;
+                width: 36px;
+                height: 6px;
+            }
+            @media (min-width: $break_sm) {
+                bottom: 33px;
+                left: -74px;
+                width: 85px;
+                height: 10px;
+            }
+            @media (min-width: $break_md) {
+                bottom: 45px;
+                left: -74px;
+            }
+        }
+
+        &_left-bottom {
+            bottom: -15px;
+            left: -22px;
+            width: 45px;
+            height: 18px;
+            @media (min-width: $break_xs) {
+                bottom: -6px;
+                left: -14px;
+                width: 45px;
+                height: 18px;
+            }
+            @media (min-width: $break_sm) {
+                bottom: -23px;
+                left: -67px;
+                width: 103px;
+                height: 37px;
+            }
+            @media (min-width: $break_md) {
+                left: -55px;
+            }
+        }
+
+        &_right-top {
+            top: -15px;
+            right: -22px;
+            width: 45px;
+            height: 18px;
+            @media (min-width: $break_xs) {
+                top: -6px;
+                right: -14px;
+                width: 45px;
+                height: 18px;
+            }
+            @media (min-width: $break_sm) {
+                top: -23px;
+                right: -67px;
+                width: 103px;
+                height: 37px;
+            }
+            @media (min-width: $break_md) {
+                right: -55px;
+            }
+        }
+
+        &_right-center-top {
+            top: 15px;
+            right: -32px;
+            width: 36px;
+            height: 6px;
+            @media (min-width: $break_xs) {
+                top: 38px;
+                right: -30px;
+                width: 36px;
+                height: 6px;
+            }
+            @media (min-width: $break_sm) {
+                top: 33px;
+                right: -74px;
+                width: 85px;
+                height: 10px;
+            }
+            @media (min-width: $break_md) {
+                top: 45px;
+                right: -74px;
+            }
+        }
+
+        &_right-center-bottom {
+            right: -32px;
+            bottom: 15px;
+            width: 36px;
+            height: 6px;
+            @media (min-width: $break_xs) {
+                right: -30px;
+                bottom: 38px;
+                width: 36px;
+                height: 6px;
+            }
+            @media (min-width: $break_sm) {
+                right: -74px;
+                bottom: 33px;
+                width: 85px;
+                height: 10px;
+            }
+            @media (min-width: $break_md) {
+                bottom: 45px;
+                right: -74px;
+            }
+        }
+
+        &_right-bottom {
+            right: -22px;
+            bottom: -15px;
+            width: 45px;
+            height: 18px;
+            @media (min-width: $break_xs) {
+                right: -14px;
+                bottom: -6px;
+                width: 45px;
+                height: 18px;
+            }
+            @media (min-width: $break_sm) {
+                right: -67px;
+                bottom: -23px;
+                width: 103px;
+                height: 37px;
+            }
+            @media (min-width: $break_md) {
+                right: -55px;
+            }
+        }
+    }
+
+    &__wrp {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__text {
+        display: inline-block;
+        position: absolute;
+        font-family: $raleway;
+        font-size: 10px;
+        line-height: 11px;
+        font-weight: 600;
+        @media (min-width: $break_xs) {
+            font-size: 14px;
+            line-height: 15px;
+        }
+        @media (min-width: $break_md) {
+            font-size: 20px;
+            line-height: 21px;
+        }
+
+        &_left-top {
+            top: -25px;
+            left: -75px;
+            text-align: right;
+            @media (min-width: $break_xs) {
+                top: -19px;
+                left: -85px;
+            }
+            @media (min-width: $break_sm) {
+                top: -36px;
+                left: -142px;
+            }
+            @media (min-width: $break_md) {
+                top: -42px;
+                left: -158px;
+            }
+        }
+
+        &_left-center-top {
+            top: 8px;
+            left: -90px;
+            text-align: right;
+            @media (min-width: $break_xs) {
+                top: 27px;
+                left: -111px;
+            }
+            @media (min-width: $break_sm) {
+                top: 22px;
+                left: -153px;
+            }
+            @media (min-width: $break_md) {
+                top: 28px;
+                left: -192px;
+            }
+        }
+
+        &_left-center-bottom {
+            bottom: 8px;
+            left: -107px;
+            text-align: right;
+            @media (min-width: $break_xs) {
+                bottom: 25px;
+                left: -135px;
+            }
+            @media (min-width: $break_sm) {
+                bottom: 22px;
+                left: -178px;
+            }
+            @media (min-width: $break_md) {
+                bottom: 30px;
+                left: -222px;
+            }
+        }
+
+        &_left-bottom {
+            bottom: -25px;
+            left: -63px;
+            text-align: right;
+            @media (min-width: $break_xs) {
+                bottom: -19px;
+                left: -67px;
+            }
+            @media (min-width: $break_sm) {
+                bottom: -34px;
+                left: -124px;
+            }
+            @media (min-width: $break_md) {
+                bottom: -42px;
+                left: -132px;
+            }
+        }
+
+        &_right-top {
+            top: -17px;
+            right: -53px;
+            @media (min-width: $break_xs) {
+                top: -10px;
+                right: -55px;
+            }
+            @media (min-width: $break_sm) {
+                top: -27px;
+                right: -107px;
+            }
+            @media (min-width: $break_md) {
+                top: -30px;
+                right: -113px;
+            }
+        }
+
+        &_right-center-top {
+            top: 8px;
+            right: -82px;
+            @media (min-width: $break_xs) {
+                top: 27px;
+                right: -98px;
+            }
+            @media (min-width: $break_sm) {
+                top: 24px;
+                right: -140px;
+            }
+            @media (min-width: $break_md) {
+                top: 29px;
+                right: -166px;
+            }
+        }
+
+        &_right-center-bottom {
+            right: -88px;
+            bottom: 8px;
+            @media (min-width: $break_xs) {
+                right: -106px;
+                bottom: 25px;
+            }
+            @media (min-width: $break_sm) {
+                right: -148px;
+                bottom: 25px;
+            }
+            @media (min-width: $break_md) {
+                right: -176px;
+                bottom: 28px;
+            }
+        }
+
+        &_right-bottom {
+            right: -107px;
+            bottom: -34px;
+            @media (min-width: $break_xs) {
+                right: -130px;
+                bottom: -25px;
+            }
+            @media (min-width: $break_sm) {
+                right: -185px;
+                bottom: -41px;
+            }
+            @media (min-width: $break_md) {
+                right: -218px;
+                bottom: -51px;
+            }
+        }
+    }
 }

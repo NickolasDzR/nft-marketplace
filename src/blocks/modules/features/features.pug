@@ -2,3 +2,86 @@ mixin features(value = false)
     +b.features
         .container
             .row
+                +e.center-wrp.col-12
+                    +e.center
+                        +picture({
+                            folder: "features",
+                            name: "top-line-left",
+                            class: "_left-top",
+                            x2: true,
+                            sm: true,
+                            width: 90,
+                            height: 36,
+                        })
+                        +picture({
+                            folder: "features",
+                            name: "line-left",
+                            class: "_left-center-top",
+                            x2: true,
+                            sm: true,
+                            width: 37,
+                            height: 12,
+                        })
+                        +picture({
+                            folder: "features",
+                            name: "line-left",
+                            class: "_left-center-bottom",
+                            x2: true,
+                            sm: true,
+                            width: 37,
+                            height: 12,
+                        })
+                        +picture({
+                            folder: "features",
+                            name: "bottom-line-left",
+                            class: "_left-bottom",
+                            x2: true,
+                            sm: true,
+                            width: 90,
+                            height: 36,
+                        })
+                        +picture({
+                            folder: "features",
+                            name: "top-line-right",
+                            class: "_right-top",
+                            x2: true,
+                            sm: true,
+                            width: 90,
+                            height: 36,
+                        })
+                        +picture({
+                            folder: "features",
+                            name: "line-right",
+                            class: "_right-center-top",
+                            x2: true,
+                            sm: true,
+                            width: 37,
+                            height: 12,
+                        })
+                        +picture({
+                            folder: "features",
+                            name: "line-right",
+                            class: "_right-center-bottom",
+                            x2: true,
+                            sm: true,
+                            width: 37,
+                            height: 12,
+                        })
+                        +picture({
+                            folder: "features",
+                            name: "bottom-line-right",
+                            class: "_right-bottom",
+                            x2: true,
+                            sm: true,
+                            width: 90,
+                            height: 36,
+                        })
+                        +e.text-wrp
+                            +e.P.text._left-top List of top<br> Creators
+                            +e.P.text._left-center-top Likes and<br> Comments
+                            +e.P.text._left-center-bottom Daily Rankings<br> of top posts
+                            +e.P.text._left-bottom Rating<br> system
+                            +e.P.text._right-top Feed
+                            +e.P.text._right-center-top Lists of<br> Favorites
+                            +e.P.text._right-center-bottom Advanced<br> Search
+                            +e.P.text._right-bottom Discover section<br> based on your<br> preferences

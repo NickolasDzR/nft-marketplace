@@ -93,7 +93,7 @@
             }
         }
 
-        @media (orientation: landscape) and (min-width: 568px) {
+        @media (orientation: landscape) and (min-width: 576px) {
             bottom: -200px;
         }
 
@@ -175,7 +175,7 @@
         margin-top: auto;
         position: absolute;
         bottom: 330px;
-        @media (orientation: landscape) and (min-width: 568px) {
+        @media (orientation: landscape) and (min-width: 576px) {
             bottom: 130px;
         }
         @media (orientation: landscape) and (min-width: 667px) {
