@@ -4,13 +4,13 @@
     overflow: hidden;
     background-color: $darker-blue;
     margin-bottom: 80px;
-    @media (min-width: $break_md) {
-        height: calc(100vh - 55px);
-    }
-
-    @media (min-width: $break_lg) {
-        height: calc(100vh - 78px);
-    }
+    //@media (min-width: $break_md) {
+    //    height: calc(100vh - 55px);
+    //}
+    //
+    //@media (min-width: $break_lg) {
+    //    height: calc(100vh - 78px);
+    //}
 
     @media (min-width: $break_xl) {
         margin-bottom: 150px;

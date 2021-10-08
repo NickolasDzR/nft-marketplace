@@ -87,7 +87,6 @@ const productAnchor = document.querySelector("a[href='#About']");
 const howTo = document.querySelector("a[href='#HowTo']");
 const roadMapAnchor = document.querySelector("a[href='#Roadmap']");
 const teamAnchor = document.querySelector("a[href='#Team']");
-// const headerLogo = document.querySelector(".header__logo");
 
 productAnchor.addEventListener("click", () => {
     jump("#About", {
@@ -116,10 +115,10 @@ teamAnchor.addEventListener("click", () => {
         duration: 500,
     });
 });
-//
-// headerLogo.addEventListener("click", () => {
-//     jump("body", {
-//         offset: 0,
-//         duration: 0
-//     });
-// });
+
+headerLogo.addEventListener("click", () => {
+    jump("body", {
+        offset: 0,
+        duration: 500,
+    });
+});
