@@ -1,6 +1,18 @@
 .features {
     margin-bottom: 160px;
 
+    @media (min-width: $break_md) {
+        margin-bottom: 255px;
+    }
+
+    @media (min-width: $break_lg) {
+        margin-bottom: 300px;
+    }
+
+    @media (min-width: $break_xl) {
+        margin-bottom: 375px;
+    }
+
     &__heading {
         text-align-last: center;
         font-family: $syncopate;

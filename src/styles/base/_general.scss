@@ -54,9 +54,11 @@ img {
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
+    @include row-flex();
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 .col-1 {
@@ -127,6 +129,30 @@ img {
 .col-lg-4 {
     @include col();
     @include size-lg(4);
+}
+
+.col-md-3 {
+    @include col();
+    @include size-md(3);
+}
+
+.col-md-4 {
+    @include col();
+    @include size-md(4);
+}
+
+.col-lg-4 {
+    @include col();
+    @include size-lg(4);
+}
+
+.col-xxl-3 {
+    @include col();
+    @include size-xxl(3);
+}
+
+.text-left {
+    text-align: left;
 }
 
 h1 {

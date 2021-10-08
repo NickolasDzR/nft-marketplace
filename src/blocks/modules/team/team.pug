@@ -1,0 +1,28 @@
+mixin team(value = false)
+    +b.team
+        .container
+            .row.justify-center
+                +e.H2.heading !{value.heading}
+                each val in value.list
+                    +e.card.col-12.col-md-6.col-lg-4.col-xxl-3
+                        +e.card-wrp
+                            +e.IMG.sphere(src="img/content/decorate/specular.webp" class="_" + val.sphereType)
+                            +e.card-inner
+                                +e.content
+                                    +e.top
+                                        +picture({
+                                            folder: "team",
+                                            name: val.imgName,
+                                            width: val.width,
+                                            height: val.height,
+                                            x2: true,
+                                            alt: "Фотография члена команды"
+                                        })
+                                    +e.bottom
+                                        +e.name #{val.name}
+                                        +e.position #{val.position}
+                                +e.overflow
+                                    +e.name._text-left #{val.name}
+                                    +e.position._text-left #{val.position}
+                                    +e.text #{val.text}
+

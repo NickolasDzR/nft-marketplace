@@ -84,7 +84,7 @@ window.onload = () => {
 const productAnchor = document.querySelector("a[href='#About']");
 const howTo = document.querySelector("a[href='#HowTo']");
 const roadMapAnchor = document.querySelector("a[href='#Roadmap']");
-const headerLogo = document.querySelector(".header__logo");
+// const headerLogo = document.querySelector(".header__logo");
 
 productAnchor.addEventListener("click", () => {
     jump("#About", {
@@ -99,13 +99,13 @@ howTo.addEventListener("click", () => {
         duration: 500,
     });
 });
-//
-// roadMapAnchor.addEventListener("click", () => {
-//     jump("#Roadmap", {
-//         offset: -100,
-//         duration: 500,
-//     });
-// });
+
+roadMapAnchor.addEventListener("click", () => {
+    jump("#Roadmap", {
+        offset: -100,
+        duration: 500,
+    });
+});
 //
 // headerLogo.addEventListener("click", () => {
 //     jump("body", {

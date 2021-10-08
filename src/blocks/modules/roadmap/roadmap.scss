@@ -1,0 +1,279 @@
+.roadmap {
+    margin-bottom: 66px;
+    padding: {
+        top: 72px;
+        bottom: 114px;
+    }
+    @media (min-width: $break_md) {
+        margin-bottom: 200px;
+        padding: {
+            top: 113px;
+            bottom: 300px;
+        }
+    }
+    @media (min-width: $break_lg) {
+        padding-bottom: 132px;
+    }
+    @media (min-width: $break_xl) {
+        margin-bottom: 350px;
+    }
+    @media (min-width: $break_xxl) {
+        margin-bottom: 430px;
+    }
+
+    &__roadline {
+        margin-left: 42px;
+        margin-right: 58px;
+        display: flex;
+        justify-content: center;
+        @media (min-width: $break_md) {
+            margin-right: 142px;
+            margin-left: 80px;
+        }
+        @media (min-width: $break_lg) {
+            margin-right: 172px;
+        }
+        @media (min-width: $break_xl) {
+            margin-right: 223px;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 40px;
+        width: 100%;
+        font-weight: 900;
+        font-size: 36px;
+        color: $white ;
+        @media (min-width: $break_md) {
+            margin-bottom: 80px;
+        }
+        @media (min-width: $break_lg) {
+            font-size: 36px;
+            line-height: 42px;
+            margin-bottom: 80px;
+        }
+    }
+
+    &__wrp {
+        position: relative;
+        width: 100%;
+    }
+
+    &__inner {
+
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    &__circle {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+        z-index: 2;
+        top: -28px;
+        width: 56px;
+        height: 56px;
+        background-color: $white;
+        box-shadow: 9px 9px 45px rgba(113, 113, 255, 0.25);
+        border-radius: 50%;
+        @media (min-width: $break_md) {
+            width: 130px;
+            height: 130px;
+        }
+
+        &_second {
+            top: 243px;
+            @media (min-width: $break_md) {
+                top: 343px;
+            }
+        }
+    }
+
+    &__span {
+        font-family: $syncopate;
+        font-weight: 700;
+        font-size: 14px;
+        color: $dark-blue;
+
+        position: absolute;
+        @media (min-width: $break_md) {
+            font-size: 28px;
+        }
+    }
+
+    &__dot {
+
+        position: absolute;
+
+        z-index: 1;
+        width: 18px;
+        height: 18px;
+        animation: dotanimation 4s linear infinite;
+        background: $white;
+        box-shadow: 0 3.56545px 7.1309px rgba(0, 0, 0, 0.15);
+        border-radius: 50%;
+        @media (min-width: $break_md) {
+            width: 24px;
+            height: 24px;
+            animation: dotanimationDesk 3s linear infinite;
+        }
+        @media (min-width: $break_md) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__line {
+        position: absolute;
+        top: 28px;
+        left: 40px;
+        @media (min-width: $break_md) {
+            top: -26px;
+            left: 76px;
+        }
+    }
+
+    &__title {
+        font-family: $syncopate;
+        font-weight: 700;
+        font-size: 18px;
+        color: $white;
+        margin-bottom: 22px;
+        @media (min-width: $break_md) {
+            font-size: 44px;
+            margin-bottom: 45px;
+        }
+        @media (min-width: $break_lg) {
+            font-size: 48px;
+            line-height: 56px;
+        }
+        @media (min-width: $break_xl) {
+            margin-bottom: 34px;
+        }
+    }
+
+    &__item {
+        font-family: $raleway;
+        font-weight: 300;
+        font-size: 16px;
+        color: $white;
+        padding-left: 35px;
+        position: relative;
+        @media (min-width: $break_md) {
+            font-size: 20px;
+        }
+        @media (min-width: $break_lg) {
+            font-size: 24px;
+        }
+        @media (min-width: $break_xl) {
+            padding-left: 40px;
+        }
+
+        & + & {
+            margin-top: 15px;
+            @media (min-width: $break_lg) {
+                margin-top: 20px;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: 0;
+            width: 22px;
+            height: 22px;
+            transform: translateY(-50%);
+            background-image: url(../img/svg/accept.svg);
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    &__element {
+        margin-bottom: 45px;
+        margin-right: 15px;
+        @media (min-width: $break_md) {
+            margin-bottom: 80px;
+        }
+        @media (min-width: $break_xl) {
+            margin-bottom: 119px;
+        }
+
+        &:first-child {
+            margin: -12px 0 61px;
+            @media (min-width: $break_md) {
+                margin-bottom: 120px;
+            }
+            @media (min-width: $break_xl) {
+                margin: 13px 0 61px;
+            }
+        }
+    }
+
+    &__level {
+        font-family: $syncopate;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 21px;
+        color: $white;
+
+        margin-bottom: 22px;
+        @media (min-width: $break_md) {
+            font-size: 30px;
+            line-height: 28px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: $break_lg) {
+            font-size: 36px;
+            line-height: 37px;
+        }
+
+        @media (min-width: $break_xl) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__sphere {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        bottom: 50%;
+        width: 320px;
+        transform: translateY(-50%);
+        @media (min-width: $break_xl) {
+            display: block;
+        }
+        @media (min-width: $break_xxl) {
+            right: 30px;
+            width: 562px;
+        }
+    }
+}
+
+@keyframes dotanimation {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 1024px, 0);
+    }
+}
+
+@keyframes dotanimationDesk {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 1420px, 0);
+    }
+}
