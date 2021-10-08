@@ -1,12 +1,15 @@
 mixin team(value = false)
-    +b.team
+    +b.team(id="Team")
         .container
             .row.justify-center
                 +e.H2.heading !{value.heading}
-                each val in value.list
-                    +e.card.col-12.col-md-6.col-lg-4.col-xxl-3
-                        +e.card-wrp
+                each val, index in value.list
+                    +e.card(class="col-12 col-md-6 col-lg-4 col-xxl-3")
+                        if index === 1
                             +e.IMG.sphere(src="img/content/decorate/specular.webp" class="_" + val.sphereType)
+                        +e.card-wrp
+                            if index !== 1
+                                +e.IMG.sphere(src="img/content/decorate/specular.webp" class="_" + val.sphereType)
                             +e.card-inner
                                 +e.content
                                     +e.top

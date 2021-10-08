@@ -1,0 +1,29 @@
+.social {
+    max-width: 208px;
+    margin: 0 auto;
+    @media (min-width: $break_md) {
+        max-width: 270px;
+    }
+    @media (min-width: $break_lg) {
+        margin-right: 0;
+        margin-left: auto;
+    }
+    &__link {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        @media (min-width: $break_md) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    &__image {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -3,11 +3,13 @@ import jump from "jump.js";
 
 const hamburger = document.querySelector(".hamburger"),
     nav = document.querySelector(".nav"),
-    navLink = nav.querySelectorAll(".nav__link");
+    navLink = nav.querySelectorAll(".nav__link"),
+    headerLogo = document.querySelector(".header__logo");
 
 const navHandler = () => {
     hamburger.classList.toggle("is-active");
     nav.classList.toggle("nav_active");
+    headerLogo.classList.toggle("header__logo_active");
 
     if (nav.classList.contains("nav_active")) {
         scrollLock.disablePageScroll();
@@ -84,6 +86,7 @@ window.onload = () => {
 const productAnchor = document.querySelector("a[href='#About']");
 const howTo = document.querySelector("a[href='#HowTo']");
 const roadMapAnchor = document.querySelector("a[href='#Roadmap']");
+const teamAnchor = document.querySelector("a[href='#Team']");
 // const headerLogo = document.querySelector(".header__logo");
 
 productAnchor.addEventListener("click", () => {
@@ -102,6 +105,13 @@ howTo.addEventListener("click", () => {
 
 roadMapAnchor.addEventListener("click", () => {
     jump("#Roadmap", {
+        offset: -100,
+        duration: 500,
+    });
+});
+
+teamAnchor.addEventListener("click", () => {
+    jump("#Team", {
         offset: -100,
         duration: 500,
     });

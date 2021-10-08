@@ -9,6 +9,8 @@ include ../blocks/modules/howto/howto
 include ../blocks/modules/features/features
 include ../blocks/modules/roadmap/roadmap
 include ../blocks/modules/team/team
+include ../blocks/modules/copyright/copyright
+include ../blocks/modules/social/social
 
 block variables
     - const title = "NFT Marketplace"
@@ -84,6 +86,8 @@ block variables
                 sphereType: "four-card",
             }
         ]
+        copyrightList = ["© NFTime. All rights reserved.", "Terms & Conditions", "Privacy policy"]
+        socialList = ["fb", "tt", "tg", "ist", "md"]
 
 block content
     include ../../node_modules/bemto.pug/bemto.pug
@@ -94,6 +98,7 @@ block content
                 //    name: "logo",
                 //    class: "header__logo",
                 //})
+                +e.A.logo(href="#") Logo
                 +hamburger({
                     parentClass: "header_hamburger"
                 })
@@ -123,6 +128,17 @@ block content
             heading: "team",
             list: team,
         })
+    +b.footer
+        .container
+            .row.md-items-center.justify-md-between
+                +e.copyright.col-12.col-lg-7
+                    +copyright({
+                        list: copyrightList,
+                    })
+                +e.soc.col-12
+                    +social({
+                        list: socialList,
+                    })
 block scripts
     script(src="js/main.js")
     script(src="js/vendor.js")

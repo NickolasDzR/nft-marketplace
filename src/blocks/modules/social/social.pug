@@ -1,0 +1,11 @@
+mixin social(value = false)
+    +b.social
+        +e.UL.list
+            each item, index in value.list
+                +e.LI.item
+                    +e.A.link(href="#")
+                        +icon({
+                            name: item,
+                            class: "social__image",
+                            width: index === 0 ? 9 : false
+                        })

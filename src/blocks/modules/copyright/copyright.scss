@@ -1,0 +1,43 @@
+.copyright {
+    &__item {
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+        @media (min-width: $break_sm) {
+            display: flex;
+            justify-content: center;
+        }
+        @media (min-width: $break_md) {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 0;
+        }
+
+        & + & {
+            @media (min-width: $break_sm) {
+                margin-left: 15px;
+            }
+
+            @media (min-width: $break_lg) {
+                margin-left: 25px;
+            }
+            @media (min-width: $break_xl) {
+                margin-left: 70px;
+            }
+        }
+    }
+
+    &__link, &__link:hover, &__link:focus, &__link:active {
+        color: $white;
+    }
+
+    &__list {
+        @media (min-width: $break_sm) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

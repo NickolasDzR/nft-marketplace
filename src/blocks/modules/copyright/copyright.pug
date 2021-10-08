@@ -1,0 +1,9 @@
+mixin copyright(value = false)
+    +b.copyright
+        +e.UL.list
+            each item, index in value.list
+                if index !== 0
+                    +e.LI.item
+                        +e.A.link(href="#") !{item}
+                else
+                    +e.LI.item !{item}

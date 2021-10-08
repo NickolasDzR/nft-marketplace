@@ -26,7 +26,7 @@ li {
     list-style: none;
 }
 
-a {
+a, a:hover, a:visited, a:active {
     text-decoration: none;
 }
 
@@ -51,6 +51,10 @@ img {
     @include lg(max-width, 960px);
     @include xl(max-width, 1140px);
     @include xxl(max-width, 1450px);
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .row {
@@ -151,6 +155,23 @@ img {
     @include size-xxl(3);
 }
 
+.col-lg-7 {
+    @include col();
+    @include size-lg(7)
+}
+
+@media (min-width: $break_lg) {
+    .md-items-center {
+        align-items: center;
+    }
+}
+
+@media (min-width: $break_lg) {
+    .justify-md-between {
+        justify-content: space-between;
+    }
+}
+
 .text-left {
     text-align: left;
 }
@@ -209,19 +230,81 @@ h2 {
 }
 
 .header {
-    background: $light-black;
-    position: relative;
+    padding: 12px 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(26, 28, 39, 0.7);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity .3s ease, visibility .3s ease, pointer-events .3s ease;
+    z-index: 1000;
 
-    &:after {
-        content: "";
-        width: 100%;
-        height: 40px;
-        background: $light-black;
-        display: block;
-        top: 0;
-        right: 0;
-        left: 0;
-        position: absolute;
-        z-index: 1;
+    &_hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    @media (min-width: $break_md) {
+        height: 80px;
+    }
+
+    //&:after {
+    //    content: "";
+    //    width: 100%;
+    //    height: 40px;
+    //    background: $light-black;
+    //    display: block;
+    //    top: 0;
+    //    right: 0;
+    //    left: 0;
+    //    position: absolute;
+    //    z-index: 1;
+    //}
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        font-family: $poppins;
+        font-size: 16px;
+        font-weight: 900;
+        color: $white;
+        z-index: 110;
+        transition: color .3s linear .5s;
+        margin-left: 15px;
+        &_active {
+            transition-delay: 0s;
+            color: $light-black
+        }
+    }
+}
+
+.footer {
+    padding: 15px 0;
+    border-top: 1px solid #323542;
+    @media (min-width: $break_md) {
+        padding: 25px 0;
+    }
+    &__copyright {
+        margin-bottom: 20px;
+        @media (min-width: $break_md) {
+            margin-bottom: 25px;
+        }
+        @media (min-width: $break_lg) {
+            margin-bottom: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+    &__soc {
+        @media (min-width: $break_lg) {
+            flex: 1;
+        }
     }
 }
