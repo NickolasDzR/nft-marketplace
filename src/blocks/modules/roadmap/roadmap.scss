@@ -87,9 +87,18 @@
         }
 
         &_second {
-            top: 243px;
+            top: 450px;
+            @media (min-width: $break_sm) {
+                top: 420px;
+            }
             @media (min-width: $break_md) {
-                top: 343px;
+                top: 605px;
+            }
+            @media (min-width: $break_lg) {
+                top: 710px;
+            }
+            @media (min-width: $break_xl) {
+                top: 650px;
             }
         }
     }
@@ -143,7 +152,7 @@
         font-weight: 700;
         font-size: 18px;
         color: $white;
-        margin-bottom: 22px;
+        margin-bottom: 7px;
         @media (min-width: $break_md) {
             font-size: 44px;
             margin-bottom: 45px;
@@ -161,6 +170,7 @@
         font-family: $raleway;
         font-weight: 300;
         font-size: 16px;
+        line-height: 32px;
         color: $white;
         padding-left: 35px;
         position: relative;
@@ -175,9 +185,15 @@
         }
 
         & + & {
-            margin-top: 15px;
+            margin-top: 2px;
+            @media (min-width: $break_md ) {
+                margin-top: 10px;
+            }
             @media (min-width: $break_lg) {
                 margin-top: 20px;
+            }
+            @media (min-width: $break_xl) {
+                margin-top: 15px;
             }
         }
 
@@ -185,16 +201,23 @@
             content: "";
             display: block;
             position: absolute;
-            top: 50%;
-            bottom: 50%;
+            top: 5px;
             left: 0;
-            width: 22px;
-            height: 22px;
-            transform: translateY(-50%);
+            width: 24px;
+            height: 19px;
             background-image: url(../img/svg/accept.svg);
             background-size: 16px;
             background-repeat: no-repeat;
             background-position: center;
+            @media (min-width: $break_md) {
+                background-size: 18px;
+            }
+            @media (min-width: $break_xl) {
+                background-size: 21px;
+            }
+            @media (min-width: $break_xxl) {
+                background-size: 24px;
+            }
         }
     }
 
@@ -226,7 +249,7 @@
         line-height: 21px;
         color: $white;
 
-        margin-bottom: 22px;
+        margin-bottom: 20px;
         @media (min-width: $break_md) {
             font-size: 30px;
             line-height: 28px;
@@ -246,7 +269,7 @@
     &__sphere {
         display: none;
         position: absolute;
-        top: 50%;
+        top: 20%;
         right: 0;
         bottom: 50%;
         width: 320px;
@@ -266,7 +289,7 @@
         transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translate3d(0, 1024px, 0);
+        transform: translate3d(0, 1740px, 0);
     }
 }
 
@@ -275,6 +298,6 @@
         transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translate3d(0, 1420px, 0);
+        transform: translate3d(0, 2200px, 0);
     }
 }
